@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Piano Track Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-roboto text-gray-800 scroll-smooth">
+    <img src = "static/img/background-1.PNG" class="absolute -z-10 w-full h-full blur-sm object-cover"/>
+    <header class="flex items-center justify-between p-4 bg-brand text-white sticky top-0 z-50">
+        <div class="flex items-center">
+            <img src="static/img/766742.png" alt="Mini Logo" class="h-10 w-10 mr-3">
+            <span class="text-xl font-bold">Usługi geodezyjne</span>
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="nav-link text-white hover:underline">O nas</a></li>
+                <li><a href="#how-it-works" class="nav-link text-white hover:underline">Nasze projekty</a></li>
+                <li><a href="#listen" class="nav-link text-white hover:underline">Usługi</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="z-0">
+        <section class="bg-brand-alp">
+            <div class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-10 text-white  lg:max-w-7xl  min-h-full">
+                <div class="image-container flex justify-center sm:col-span-1 hidden lg:block">
+                    <img src="static/img/architects-works-front-building-site.jpg" alt="Piano" class="w-64 h-64 rounded-full border-4 border-white object-cover -mr-4">
+                </div>
+                <div class="image-container flex justify-center sm:col-span-1 hidden lg:block">
+                    <img src="static/img/instrument1.jpg" alt="Piano" class="w-56 h-56 rounded-full border-4 border-white object-cover -ml-6">
+                </div>
+                <div class="image-container flex justify-center sm:col-span-1">
+                    <img src="static/img/vertical-shot-car-driving-pathway-middle-forest-with-mountains-background.jpg" alt="Piano" class="w-72 h-72 rounded-full border-4 border-white object-cover -mt-4">
+                </div>
+                <div class="image-container flex justify-center sm:col-span-1">
+                    <img src="static/img/aerial-view-plains-fields.jpg" alt="Piano" class="w-48 h-48 rounded-full border-4 border-white object-cover -ml-2">
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <section id="about" class=" bg-white">
+            <div class="flex flex-col lg:flex-row py-10 px-5 gap-10  max-w-7xl">
+                <div class="content lg:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">O nas</h2>
+                    <p class="mb-4">Nasza firma geodezyjna z dumą kontynuuje wieloletnią tradycję świadczenia usług na najwyższym poziomie. Działamy na rynku od 1990 roku, a nasz zespół to doświadczeni specjaliści, w tym geodeta uprawniony, którego wiedza i umiejętności gwarantują precyzję oraz zgodność z obowiązującymi przepisami. Dzięki wieloletniemu doświadczeniu w branży geodezji oferujemy kompleksową obsługę zarówno dla klientów indywidualnych, jak i firm.</p>
+                    <p class="mb-4">Nasze biuro specjalizuje się w usługach związanych z geodezją oraz prawem nieruchomości gruntowych, zapewniając pełne wsparcie na każdym etapie realizacji projektu. W zakres naszych usług wchodzą m.in:</p>
+                    <ul class="list-disc list-inside space-y-2 p-5">
+                        <li>Mapy do celów projektowych</li>
+                        <li>Podział nieruchomości gruntowych</li>
+                        <li>Analiza prawna nieruchomości gruntowych</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39811.655027022374!2d21.11492882536176!3d51.41723017887125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718592aa02cdbc7%3A0xe530d6c89ff4d21b!2sRadom!5e0!3m2!1sen!2spl!4v1734758977892!5m2!1sen!2spl" 
+                        width="350" 
+                        height="300" 
+                        class="rounded-lg shadow-lg border borderF-gray-300"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <section id="places" class="bg-gray-100">
+            <div class="places flex flex-col lg:flex-row  py-10 px-5 gap-10  max-w-7xl">
+                <div class="image-container flex justify-center lg:w-1/2 fade-in">
+                    <img src="static/img/mapa-wojewodztwo.png" alt="Map" class="max-w-md rounded w-100 h-200 object-cover">
+                </div>
+                <div class="content lg:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">Gdzie działamy</h2>
+                    <p class="mb-4">Nasza firma świadczy usługi geodezyjne głównie na terenie czterech powiatów województwa śląskiego:</p>
+                    <ul class="list-disc list-inside space-y-2 p-5">
+                        <li>Powiat kłobucki</li>
+                        <li>Powiat lubliniecki</li>
+                        <li>Powiat częstochowski</li>
+                        <li>Powiat myszkowski</li>
+                    </ul>
+                    <p class="mb-4">W przypadku potrzeby realizacji usług w innych lokalizacjach, jesteśmy otwarci na współpracę. Prosimy o kontakt w celu omówienia szczegółów i możliwości świadczenia usług geodezyjnych poza wymienionymi powiatami. Dzięki elastycznemu podejściu oraz szerokiemu doświadczeniu jesteśmy w stanie sprostać wymaganiom klientów również w innych rejonach.</p>
+                </div>
+            </div>
+        </section>
+        <section id="how-it-works" class="bg-white">
+            <div class="flex flex-col lg:flex-row py-10 px-5 gap-10 max-w-7xl">
+                <div class="content lg:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">Nasze projekty</h2>
+                    <p class="mb-4">Działalność naszego biura przyczyniła się do realizacji wielu inwestycji:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Strzelnica Lubliniec</li>
+                        <li>Osiedle szeregówek</li>
+                        <li>Market netto Karpacz</li>
+                    </ul>
+                </div>
+                <div class="flex justify-center lg:w-1/2 fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-10 ">
+                    <div class="image-container flex justify-center sm:col-span-1">
+                        <img src="static/img/architects-works-front-building-site.jpg" alt="Piano" class="w-64 h-64 rounded-full border-4 border-white object-cover -mr-4">
+                    </div>
+                    <div class="image-container flex justify-center sm:col-span-1">
+                        <img src="static/img/instrument1.jpg" alt="Piano" class="w-56 h-56 rounded-full border-4 border-white object-cover -ml-6">
+                    </div>
+                    <div class="image-container flex justify-center sm:col-span-1">
+                        <img src="static/img/vertical-shot-car-driving-pathway-middle-forest-with-mountains-background.jpg" alt="Piano" class="w-72 h-72 rounded-full border-4 border-white object-cover -mt-4">
+                    </div>
+                    <div class="image-container flex justify-center sm:col-span-1">
+                        <img src="static/img/aerial-view-plains-fields.jpg" alt="Piano" class="w-48 h-48 rounded-full border-4 border-white object-cover -ml-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="bg-gray-100">
+            <div class="py-10 px-5 max-w-7xl">
+                <h2 class="text-2xl font-bold mb-4">Cennik usług</h2>
+                <div class="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="card bg-white border rounded p-5 shadow fade-in max-w-lg">
+                        <h3 class="text-xl font-bold mb-2">Mapa do celów projektowych</h3>
+                        <div class="image-container mb-4">
+                            <img src="static/img/map-engineer.jpg" alt="Map Engineer" class="rounded">
+                        </div>
+                        <p class="mb-4">Explore strategies to grow your business effectively and efficiently.</p>
+                        <div class="audio-player text-lg font-bold">1000 PLN</div>
+                    </div>
+                    <div class="card bg-white border rounded p-5 shadow fade-in  max-w-lg">
+                        <h3 class="text-xl font-bold mb-2">Podział</h3>
+                        <div class="image-container mb-4">
+                            <img src="static/img/multiple-houses.jpg" alt="Multiple Houses" class="rounded">
+                        </div>
+                        <p class="mb-4">Dive into market analysis techniques to stay ahead of the competition.</p>
+                        <div class="audio-player text-lg font-bold">2000 PLN</div>
+                    </div>
+                    <div class="card bg-white border rounded p-5 shadow fade-in  max-w-lg">
+                        <h3 class="text-xl font-bold mb-2">Inne usługi</h3>
+                        <div class="image-container mb-4">
+                            <img src="static/img/construction.jpg" alt="Construction" class="rounded">
+                        </div>
+                        <p class="mb-4">Nie znalazłeś interesującej Cię usługi?</p>
+                        <div class="audio-player text-lg font-bold">Skontaktuj się z nami!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-brand text-white py-10 px-5 text-center">
+            <div class="logo mb-5">
+                <!-- Small SVG Logo here -->
+            </div>
+            <ul class="space-y-2 mb-5">
+                <li>+48 123 456 789</li>
+                <li>jan.kowalski@gmail.com</li>
+                <li>Warszawa, ul. Woronicza 17 00-000</li>
+            </ul>
+            <nav class="footer-nav">
+                <ul class="flex justify-center space-x-5">
+                    <li><a href="#about" class="text-white font-bold hover:underline">O nas</a></li>
+                    <li><a href="#how-it-works" class="text-white font-bold hover:underline">Nasi klienci</a></li>
+                    <li><a href="#listen" class="text-white font-bold hover:underline">Usługi</a></li>
+                </ul>
+            </nav>
+            <p class="text-sm mt-5">© 2024 Kowalski corp.</p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
