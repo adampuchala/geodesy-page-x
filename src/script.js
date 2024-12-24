@@ -1,26 +1,67 @@
 const baseUrl = window.location.href; // Replace with your base URL
 
 window.addEventListener('load', () => {
-    // compose_button();
-    // document.querySelector('#compose_button').addEventListener('click', () => {
-    //     callGenerateMusic();
-    // });
-    // hide_audio_player();
-    // hide_download_button();
-
     setUpHideNav();
     setUpAppearingImagesAnimation();
     setUpSmoothScroll();
     setUpNavigationHighlighting();
+    setUpMobileSideNav();
+    setUpHideSideMenuOnHrefClick();
 });
 
-function setUpHideNav(){
+function setUpHideSideMenuOnHrefClick() {
+    const navLinks = document.querySelectorAll('a');
+
+    // Add click event listeners to each link
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Prevent default behavior (optional)
+            event.preventDefault();
+
+            // Log the href or perform an action
+            const targetHref = link.getAttribute('href');
+            console.log(`Navigating to: ${targetHref}`);
+
+            hideMobileSideNav();
+
+            // Optionally navigate to the section
+            setTimeout(() => {
+                window.location.href = targetHref;
+            }, 300); // Delay navigation for smooth animation
+        });
+    });
+}
+
+function setUpMobileSideNav() {
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        const sideNav = document.getElementById("side-nav");
+        if (sideNav.classList.contains("translate-x-[100%]")) {
+            showMobileSideNav();
+        } else {
+            hideMobileSideNav();
+        }
+    });
+}
+
+function showMobileSideNav() {
+    const sideNav = document.getElementById("side-nav");
+    sideNav.classList.add("translate-x-[20%]");
+    sideNav.classList.remove("translate-x-[100%]");
+}
+
+function hideMobileSideNav() {
+    const sideNav = document.getElementById("side-nav");
+    sideNav.classList.remove("translate-x-[20%]");
+    sideNav.classList.add("translate-x-[100%]");
+}
+
+function setUpHideNav() {
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
     const footerHeight = footer.offsetHeight;
     const windowHeight = window.innerHeight;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrollPosition = window.scrollY;
         const footerTop = footer.getBoundingClientRect().top;
 
@@ -32,7 +73,7 @@ function setUpHideNav(){
     });
 }
 
-function setUpAppearingImagesAnimation(){
+function setUpAppearingImagesAnimation() {
     const fadeInElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -50,12 +91,12 @@ function setUpAppearingImagesAnimation(){
     });
 }
 
-function setUpSmoothScroll(){
+function setUpSmoothScroll() {
     const header = document.querySelector('header');
     const navLinks = document.querySelectorAll('a[href^="#"]');
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
@@ -67,7 +108,7 @@ function setUpSmoothScroll(){
     });
 }
 
-function setUpNavigationHighlighting(){
+function setUpNavigationHighlighting() {
     const header = document.querySelector('header');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -98,59 +139,4 @@ function setUpNavigationHighlighting(){
 
     // Initial call to highlight the correct section on page load
     highlightSectionAtTop();
-}
-
-function callGenerateMusic() {
-    const url = `${baseUrl}/api/generate-music`;
-    compose_button_progress();
-    hide_download_button();
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            compose_button();
-            show_download_button(data.file_name);
-            audio_player_play(data.file_name)
-        })
-        .catch(error => {
-            compose_button();
-            hide_download_button();
-            console.error(error);
-        });
-}
-
-function hide_download_button(){
-    document.querySelector('#download_button').style.visibility = 'hidden';
-}
-
-function show_download_button(fileName){
-    document.querySelector('#download_button').href = baseUrl + '/static/audio/' + fileName;
-    document.querySelector('#download_button').style.visibility = 'visible';
-}
-
-function hide_audio_player(){
-    document.querySelector('#audio_player').style.visibility = 'hidden';
-
-}
-
-function audio_player_play(fileName) {
-    const player = document.querySelector('#audio_player');
-    player.style.visibility = 'visible';
-    player.src = baseUrl + '/static/audio/' + fileName;
-    player.load();
-    player.play();
-    player.style.display = 'block';
-}
-
-function compose_button() {
-    const button = document.querySelector('#compose_button');
-    button.disabled = false;
-    button.textContent = "LET'S COMPOSE!";
-    button.style.backgroundColor = "white";
-}
-
-function compose_button_progress() {
-    const button = document.querySelector('#compose_button');
-    button.disabled = true;
-    button.textContent = "GENERATING..";
-    button.style.backgroundColor = "grey";
 }
