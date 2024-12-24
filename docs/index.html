@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="overflow-x-hidden w-screen bg-brand" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,27 +9,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-roboto text-gray-800 scroll-smooth">
-    <img src="static/img/background-1.PNG" class="absolute -z-10 w-full h-full blur-sm" />
-    <header class="flex items-center justify-between p-4 bg-brand text-white sticky top-0 z-50">
+<body class="font-roboto text-gray-800 scroll-smooth w-screen bg-[url('static/img/background-1.PNG')]">
+
+    <nav id="side-nav"
+        class="fixed z-30 jusitfy-center top-0 right-0 h-screen w-64 bg-brand mt-12 p-10 pt-10 transform transition-transform duration-300 ease-in-out translate-x-[100%]">
+        <ul class="space-y-4">
+            <li><a href="#about" class="text-white text-lg hover:underline">O nas</a></li>
+            <li><a href="#places" class="text-white text-lg hover:underline">Gdzie działamy</a></li>
+            <li><a href="#projects" class="text-white text-lg hover:underline">Nasze projekty</a></li>
+            <li><a href="#services" class="text-white text-lg hover:underline">Usługi</a></li>
+        </ul>
+    </nav>
+
+    <header class="flex items-center justify-between p-4 bg-brand text-white sticky top-0 z-30">
         <div class="flex items-center">
             <img src="static/img/766742.png" alt="Mini Logo" class="h-10 w-10 mr-3">
             <span class="text-xl font-bold">Usługi geodezyjne</span>
         </div>
-        <nav>
+        <nav class="hidden md:block lg:block">
             <ul class="flex space-x-6 text-center focus:no-underline">
                 <li><a href="#about" class="nav-link text-white hover:underline">O nas</a></li>
+                <li><a href="#places" class="nav-link text-white hover:underline">Gdzie działamy</a></li>
                 <li><a href="#projects" class="nav-link text-white hover:underline">Nasze projekty</a></li>
                 <li><a href="#services" class="nav-link text-white hover:underline">Usługi</a></li>
             </ul>
         </nav>
+        <div class="md:hidden lg:hidden flex flex-col-reverse items-end">
+            <button id="menu-toggle" class="text-white text-2xl focus:outline-none">☰</button>
+
+        </div>
+
+
     </header>
+
     <main class="z-0">
         <section class="flex justify-center bg-brand-alp">
             <div
-                class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-10 text-white  lg:max-w-7xl  min-h-full">
+                class="z-10 content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-10 text-white  lg:max-w-7xl  min-h-full">
                 <div class="image-container flex justify-center sm:col-span-1 hidden lg:block">
                     <img src="static/img/architects-works-front-building-site.jpg" alt="Piano"
                         class="w-64 h-64 rounded-full border-4 border-white object-cover -mr-4">
@@ -67,14 +86,15 @@
                         <li>Podział nieruchomości gruntowych</li>
                         <li>Analiza prawna nieruchomości gruntowych</li>
                     </ul>
+                    <div class="content py-10">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39811.655027022374!2d21.11492882536176!3d51.41723017887125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718592aa02cdbc7%3A0xe530d6c89ff4d21b!2sRadom!5e0!3m2!1sen!2spl!4v1734758977892!5m2!1sen!2spl"
+                            width="350" height="300" class="rounded-lg shadow-lg border borderF-gray-300"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
-                <div class="content py-10">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39811.655027022374!2d21.11492882536176!3d51.41723017887125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718592aa02cdbc7%3A0xe530d6c89ff4d21b!2sRadom!5e0!3m2!1sen!2spl!4v1734758977892!5m2!1sen!2spl"
-                        width="350" height="300" class="rounded-lg shadow-lg border borderF-gray-300" allowfullscreen=""
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+
             </div>
         </section>
         <section id="places" class="flex justify-center bg-gray-100">
@@ -203,6 +223,7 @@
             <nav class="footer-nav">
                 <ul class="flex justify-center space-x-5">
                     <li><a href="#about" class="text-white font-bold hover:underline">O nas</a></li>
+                    <li><a href="#places" class="text-white font-bold hover:underline">Gdzie działamy</a></li>
                     <li><a href="#projects" class="text-white font-bold hover:underline">Nasze projekty</a></li>
                     <li><a href="#services" class="text-white font-bold hover:underline">Usługi</a></li>
                 </ul>
@@ -210,7 +231,7 @@
             <p class="text-sm mt-5">© 2024 Kowalski corp.</p>
         </footer>
     </main>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
